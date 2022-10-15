@@ -25,7 +25,7 @@ class _AddQuestionState extends State<AddQuestion> {
       setState((){
         _isLoading=true;
       });
-      Map<String,String> questionMap = {
+      Map<String,dynamic> questionMap = {
         "question" : question,
         "option1":option1,
         "option2":option2,
@@ -63,32 +63,21 @@ class _AddQuestionState extends State<AddQuestion> {
         child: Column(
           children: [
             TextFormField(
-
-              validator:(String? val) {
-                if (val != null && val.isEmpty) {
-                  return "Enter Question";
-                }
-                return null;
-              },
+              validator: (val){ return val! .isEmpty ? "Enter Question": null;},
               decoration: InputDecoration(
-                  hintText: "Question "
+                  hintText: "Question"
               ),
               onChanged: (val){
-                question   = val;
+                question = val;
               },
             ),
             SizedBox(
               height: 6,
             ),
             TextFormField(
-              validator:(String? val) {
-                if (val != null && val.isEmpty) {
-                  return "Enter Option1";
-                }
-                return null;
-              },
+              validator: (val){ return val! .isEmpty ? "Enter Option1": null;},
               decoration: InputDecoration(
-                  hintText: "Option1(correct answer)"
+                  hintText: "Option1(Correct Answer)"
               ),
               onChanged: (val){
                 option1 = val;
@@ -98,28 +87,17 @@ class _AddQuestionState extends State<AddQuestion> {
               height: 6,
             ),
             TextFormField(
-
-              validator:(String? val) {
-                if (val != null && val.isEmpty) {
-                  return "Enter Option2  ";
-                }
-                return null;
-              },
+              validator: (val){ return val! .isEmpty ? "Enter Option2": null;},
               decoration: InputDecoration(
                   hintText: "Option2"
               ),
               onChanged: (val){
-                option2  = val;
+                option2 = val;
               },
             ),
 
             TextFormField(
-              validator:(String? val) {
-                if (val != null && val.isEmpty) {
-                  return "Enter Oprion3 ";
-                }
-                return null;
-              },
+              validator: (val){ return val! .isEmpty ? "Enter Option3": null;},
               decoration: InputDecoration(
                   hintText: "Option3"
               ),
@@ -131,21 +109,12 @@ class _AddQuestionState extends State<AddQuestion> {
               height: 6,
             ),
             TextFormField(
-              // validator: (val){ return val! .isEmpty ? "Enter Password": null;},
-              obscureText: true,
-              enableSuggestions: false,
-              autocorrect: false,
-              validator:(String? val) {
-                if (val != null && val.isEmpty) {
-                  return "Enter Option4";
-                }
-                return null;
-              },
+              validator: (val){ return val! .isEmpty ? "Enter Option4": null;},
               decoration: InputDecoration(
                   hintText: "Option4"
               ),
               onChanged: (val){
-                option4   = val;
+                option4 = val;
               },
             ),
             Spacer(),
@@ -162,7 +131,7 @@ class _AddQuestionState extends State<AddQuestion> {
                   onTap: (){
                     uploadQuestionData();
                   },
-                    child: purpleButton(context, "Add Question"),
+                    child: purpleButton2(context, "Add Question"),
                 )
               ],
             ),

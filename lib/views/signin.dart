@@ -31,7 +31,7 @@ class _SignInState extends State<SignIn> {
           setState((){
             _isLoading=false;
           });
-          HelperFunctions.saveuserLoggedIndetails(isLoggedIn : true)
+          HelperFunctions.saveUserLoggedInDetails(isLoggedIn : true);
           Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>Home()));
         }
       });
@@ -85,7 +85,7 @@ class _SignInState extends State<SignIn> {
                 autocorrect: false,
                 validator:(String? val) {
                   if (val != null && val.isEmpty) {
-                    return "Enter password";
+                     return "Enter password";
                   }
                   return null;
                 },

@@ -30,7 +30,11 @@ class _MyAppState extends State<MyApp> {
   }
 
   checkUserLoggedInState() async {
-    _isLoggedIn =await HelperFunctions.getUserLoggedInDetails() as bool;
+    await HelperFunctions.getUserLoggedInDetails().then((value){
+      setState((){
+        _isLoggedIn = value!;
+      });
+    });
   }
   @override
   Widget build(BuildContext context) {
@@ -43,7 +47,7 @@ class _MyAppState extends State<MyApp> {
           primarySwatch: Colors.blue
       ),
       //if is logged in null provide false value
-      home:  (_isLoggedIn ?? false) ? Home() : SignIn(),
+      home:  _isLoggedIn ? Home() : SignIn(),
     );
   }
 }

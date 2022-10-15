@@ -4,6 +4,8 @@ import 'package:quizbuilder/views/signin.dart';
 import 'package:quizbuilder/widgets/widgets.dart';
 import 'package:quizbuilder/views/home.dart';
 
+import '../helper/functions.dart';
+
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
 
@@ -31,6 +33,8 @@ class _SignUpState extends State<SignUp> {
           setState((){
             _isLoading=false;
           });
+          HelperFunctions.saveUserLoggedInDetails(isLoggedIn : true);
+
           Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>Home()));
         }
       });
