@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "51368102398",
+    "project_id": "quizbuilder-cd234",
+    "storage_bucket": "quizbuilder-cd234.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51368102398:android:a5c923313a2c5e7cee18af",
+        "android_client_info": {
+          "package_name": "com.example.quizbuilder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51368102398-divid5lpu256jvitb3mhrctfjm0pi8o9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpX-xmF3p2naM3eCzA-rLQG1rkSfg0GuA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51368102398-divid5lpu256jvitb3mhrctfjm0pi8o9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "51368102398-kedtdatj1au1h6490ijk6tntdt11puk2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.quizbuilder"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
