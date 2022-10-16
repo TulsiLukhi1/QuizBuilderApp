@@ -64,6 +64,7 @@ class _CreateQuizState extends State<CreateQuiz> {
             TextFormField(
               validator: (val){ return val! .isEmpty ? "Enter Quiz Url": null;},
               decoration: InputDecoration(
+
                 hintText: "Quiz Image url",
               ),
               onChanged: (val){
@@ -76,6 +77,7 @@ class _CreateQuizState extends State<CreateQuiz> {
               validator: (val){ return val! .isEmpty ? "Enter Quiz Title": null;},
               decoration: InputDecoration(
                 hintText: "Quiz Title",
+
               ),
               onChanged: (val){
                 quizTitle = val;
@@ -87,6 +89,7 @@ class _CreateQuizState extends State<CreateQuiz> {
               validator: (val){ return val! .isEmpty ? "Enter Quiz Description": null;},
               decoration: InputDecoration(
                 hintText: "Quiz Description",
+
               ),
               onChanged: (val){
                 quizDescription = val;

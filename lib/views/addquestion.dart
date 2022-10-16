@@ -71,7 +71,11 @@ class _AddQuestionState extends State<AddQuestion> {
       ),
       body: isLoading
           ? Container(
-        child: Center(child: CircularProgressIndicator()),
+        child: Center(
+          child: CircularProgressIndicator(
+            valueColor: new AlwaysStoppedAnimation<Color>(Colors.deepPurple),
+          ),
+        ),
       )
           : Form(
         key: _formKey,

@@ -69,7 +69,11 @@ class _SignInState extends State<SignIn> {
                   return null;
                 },
                 decoration: InputDecoration(
-                    hintText: "Email"
+                    hintText: "Email",
+                  focusedBorder:OutlineInputBorder(
+                    borderSide: const BorderSide(color: Colors.deepPurple),
+
+                  ),
                 ),
                 onChanged: (val){
                   email = val;

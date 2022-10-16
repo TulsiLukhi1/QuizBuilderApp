@@ -1,26 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 class DatabaseService{
   Future<void> addQuizData(Map<String,dynamic> quizData,String quizId) async{
     await FirebaseFirestore.instance.collection("Quiz").
     doc(quizId).set(quizData);
   }
-
-  // Future<void> addQuizData(Map quizData, String quizId) async {
-  //   await FirebaseFirestore.instance
-  //       .collection("Quiz")
-  //       .doc(quizId)
-  //       .set(quizData)
-  //       .catchError((e) {
-  //     print(e);
-  //   });
-  // }
-
-
-  // Future<void> addQuestionData(Map<String,dynamic> questionData,String quizId)async {
-  //   await FirebaseFirestore.instance.collection("Quiz")
-  //       .doc(quizId).collection("QNA")
-  //       .add(questionData);
-  // }
 
   Future<void> addQuestionData(quizData, String quizId) async {
     await FirebaseFirestore.instance
@@ -31,5 +15,17 @@ class DatabaseService{
         .catchError((e) {
       print(e);
     });
+  }
+
+  getQuizData() async{
+    return await FirebaseFirestore.instance.collection("Quiz").snapshots();
+  }
+
+  getQuestionData(String quizId) async{
+    return await FirebaseFirestore.instance
+        .collection("Quiz")
+        .doc(quizId)
+        .collection("QNA")
+        .get();
   }
 }

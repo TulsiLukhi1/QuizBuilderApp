@@ -44,7 +44,7 @@ class _MyAppState extends State<MyApp> {
 
       theme: ThemeData(
           visualDensity : VisualDensity.adaptivePlatformDensity,
-          primarySwatch: Colors.blue
+          primarySwatch: Colors.deepPurple
       ),
       //if is logged in null provide false value
       home:  _isLoggedIn ? Home() : SignIn(),
